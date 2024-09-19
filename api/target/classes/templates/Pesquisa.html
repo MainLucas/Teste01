@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Produtos</title>
+</head>
+<body>
+    <h1>Pesquisar Produto</h1>
+    <form action="/pesquisar" method="get">
+        <input type="text" name="nome" placeholder="Nome do produto" required>
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <div>
+        <h2>Resultados:</h2>
+        <ul>
+            <li th:each="produto : ${produtos}">
+                <span th:text="${produto.nome}">Produto Nome</span> - 
+                <span th:text="${produto.descricao}">Descrição</span> - 
+                <span th:text="${produto.preco}">Preço</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
